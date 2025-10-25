@@ -1,0 +1,107 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Форма */
+.task-form {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.task-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.task-form input[type="text"],
+.task-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.task-form button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #2a8fbd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-form button:hover {
+    background-color: #1a6f9e;
+}
+
+/* Список задач */
+.task-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.task-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.task-card h3 {
+    margin: 0 0 10px;
+}
+
+.task-card p {
+    margin: 0 0 10px;
+    color: #555;
+}
+
+/* Кнопка удалить */
+.delete-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .task-form, .task-list {
+        max-width: 100%;
+    }
+}
