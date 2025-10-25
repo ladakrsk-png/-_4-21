@@ -1,45 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('taskForm');
-  const list = document.getElementById('taskList');
+  const taskList = document.getElementById('taskList');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Остановить перезагрузку страницы
 
     const title = form.taskName.value.trim();
-    const desc = form.taskDescription.value.trim();
+    const description = form.taskDescription.value.trim();
 
     if (!title) {
       alert('Пожалуйста, введите название задачи.');
       return;
     }
 
-    // Создаём элемент li — это "карточка задачи"
+    // Создать элемент списка задачи
     const li = document.createElement('li');
-    li.className = 'task-card';
+    li.classList.add('task-card');
 
+    // Заголовок задачи
     const taskTitle = document.createElement('div');
-    taskTitle.className = 'task-card-title';
+    taskTitle.classList.add('task-card-title');
     taskTitle.textContent = title;
     li.appendChild(taskTitle);
 
-    if (desc) {
+    // Описание задачи (если есть)
+    if (description) {
       const taskDesc = document.createElement('div');
-      taskDesc.className = 'task-card-desc';
-      taskDesc.textContent = desc;
+      taskDesc.classList.add('task-card-desc');
+      taskDesc.textContent = description;
       li.appendChild(taskDesc);
     }
 
-    // Кнопка удалить
-    const delBtn = document.createElement('button');
-    delBtn.className = 'delete-btn';
-    delBtn.textContent = 'Удалить';
-    delBtn.onclick = () => list.removeChild(li);
-    li.appendChild(delBtn);
+    // Кнопка удаления задачи
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.textContent = 'Удалить';
+    deleteBtn.addEventListener('click', () => {
+      taskList.removeChild(li);
+    });
+    li.appendChild(deleteBtn);
 
-    // Добавляем карточку в список
-    list.appendChild(li);
+    // Добавить задачу в список
+    taskList.appendChild(li);
 
-    // Очищаем форму
+    // Очистить форму
     form.reset();
   });
 });
