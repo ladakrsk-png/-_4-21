@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ежедневник</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Ежедневник</h1>
+    </header>
+
+    <section class="task-form">
+        <form id="taskForm">
+            <label for="taskName">Название задачи (обязательно):</label>
+            <input type="text" id="taskName" name="taskName" required />
+            
+            <label for="taskDescription">Описание (необязательно):</label>
+            <textarea id="taskDescription" name="taskDescription"></textarea>
+            
+            <button type="submit">Добавить</button>
+        </form>
+    </section>
+
+    <section class="task-list" id="taskList">
+        <!-- Задачи будут добавляться сюда -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
